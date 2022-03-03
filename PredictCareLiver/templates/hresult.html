@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Cardiovascular disease Prediction</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container-fluid" style="background-color: #fff">
+
+  <div class="container">
+    
+
+    <div class="jumbotron" style="background-color:lightgreen">
+      <h1>Cardiovascular Disease Prediction</h1>      
+      <p>Prediction -> {{ output }}</p>
+      <p>Accuracy of prediction is {{accuracy*100}} %</p>
+
+      <p>The time taken to predict is {{ time }} s.</p>
+    </div>
+
+  </div>  
+  <div class="row">
+    <div class="col-sm-6 " style="background-color:#ccddff;padding: 15px">
+      <h2 style="text-align: center; font-family: 'Verdana', cursive;">Healthy heart tips</h2>
+      <ul>
+          <li>A healthy heart is one that gets exercised. Physical activity is essential to heart health.</li>
+          <li>Good fats from vegetables, nuts, seeds and fish can reduce the risk of heart disease, lower bad cholesterol and increase good cholesterol.</li>
+            <li>Smoking leads to a buildup of fatty substances in the arteries, which is a chief contributor to deaths from smoking. Secondhand smoke is also linked to cardiovascular disease.</li>
+        </ul>
+    </div>
+    <div class="col-sm-6" style="background-color:#ffccee;padding: 15px">
+      <h2 style="text-align: center; font-family: 'Verdana', cursive;">Avoid Unhealthy habits</h2>
+        <ul>
+            <li>Irregular sleeping routine Sleep is an often overlooked key to a healthy heart. Regardless of age, weight or smoking habits, people who are sleep deprived are at a higher risk for cardiovascular disease</li>
+        <li>Avoid Getting too stressed out through Exercising, Listening to music
+            and Practicing meditation or yoga</li>
+        <li>While the occasional glass of wine with dinner or beer with friends is okay, over-drinking can be dangerous for your heart. It can cause damage to your heart and arteries over time. </li>
+        </ul>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>

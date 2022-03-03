@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Heart Health Prediction</title>
+  <meta charset="utf-8">
+  <ui:include src="footer.html"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+    /* css for back to top button */
+  html {
+    scroll-behavior: smooth;
+  }
+  a , a:hover
+  {
+    text-decoration: none;
+  }
+  #button {
+    display: inline-block;
+    background-color: #01CBC6;
+    width: 52px;
+    height: 52px;
+    text-align: center;
+    border-radius: 25px;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    transition: background-color .3s, 
+      opacity .5s, visibility .5s;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 1000;
+  }
+  #button::after {
+    content: "\f077";
+    font-family: FontAwesome;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 2em;
+    line-height: 50px;
+    color: #fff;
+  }
+  #button:hover {
+    cursor: pointer;
+    background-color: lightgreen;
+  }
+  #button:active {
+    background-color: lightgreen;
+  }
+  #button.show {
+    opacity: 1;
+    visibility: visible;
+  }
+  
+.buttonx {
+  background-color:pink;
+  border: none;
+  color: white;
+  padding: 10px 24px;
+  text-align: center;
+  font-size: 9px;
+  margin: 4px 2px;
+  opacity: 0.6;
+  transition: 0.3s;
+  display: inline-block;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+  /* Styles for the content section */
+  
+  
+  @media (min-width: 500px) {
+    
+    #button {
+      margin: 30px;
+      font-size: medium;
+      
+    }
+  }
+  
+.buttonx:hover {opacity: 1;color: black;}
+
+</style>
+</head>
+<body>
+
+  </style>
+</head>
+<body>
+    <!-- Back to top button -->
+<a id="button"></a>
+<div class="container-fluid" style="background-color: #fff">
+  <div style="background-color:skyblue">
+    <h1 align="center" style="margin-top:1px; font-family: 'Verdana', cursive;">MedCare Disease Prediction Site</h1>      
+    </div>
+  <div class="container">
+    <div style="margin: 40px;padding: 20px;font-size: 1.3em;background-color: #67E6DC">
+
+      <ul class="nav nav-tabs" style="background-color:whitesmoke">
+        <li><a data-toggle="tab" href="#menu1" style="font-family: 'Verdana', cursive;">Heart Disease Predictor</a></li>
+      </ul>
+
+      <div class="tab-content">
+        <div id="home">
+          <p style="font-size: 1.2em; font-family: 'Verdana', cursive;">These inputs need to be provided for the classifier
+             to predict heart health</p> 
+        </div>
+      </div>
+    </div>
+
+
+    <div style="background-color:#53E0BC; padding: 20px; margin: 40px">
+
+      <form class="form-horizontal" action="/hpredict" method="post">
+        <div class="form-group">
+          <label class="control-label col-sm-2" for="x51" style="font-family: 'Verdana', cursive;">Age</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="x51" placeholder="Enter Age" name="x51"  required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="control-label col-sm-2" for="x52" style="font-family: 'Verdana', cursive;">Sex</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="x52" placeholder="Enter Sex" name="x52" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="control-label col-sm-2" for="x53" style="font-family: 'Verdana', cursive;">Chest pain type</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="x53" placeholder="Enter Chest pain" name="x53" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="control-label col-sm-2" for="x54" style="font-family: 'Verdana', cursive;">Resting blood pressure</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="x54" placeholder="Enter resting bp" name="x54" required>
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <label class="control-label col-sm-2" for="x55" style="font-family: 'Verdana', cursive;">Cholestrol</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="x55" placeholder="Enter cholestrol" name="x55" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="control-label col-sm-2" for="x56" style="font-family: 'Verdana', cursive;">Fasting blood sugar</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="x56" placeholder="Enter fasting blood sugar" name="x56" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="control-label col-sm-2" for="x57" style="font-family: 'Verdana', cursive;">Resting ECG</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="x57" placeholder="Enter ECG results" name="x57" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="control-label col-sm-2" for="x59" style="font-family: 'Verdana', cursive;">Exercise induced angina</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="x59" placeholder="Enter exercise induced angina" name="x58" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="control-label col-sm-2" for="x60" style="font-family: 'Verdana', cursive;">Oldpeak</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="x60" placeholder="Enter Oldpeak" name="x59" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="control-label col-sm-2" for="x61" style="font-family: 'Verdana', cursive;">Slope</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="x61" placeholder="Enter alope" name="x60" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="control-label col-sm-2" for="x62" style="font-family: 'Verdana', cursive;">CA</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="x62" placeholder="Enter CA" name="x61" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="control-label col-sm-2" for="x63" style="font-family: 'Verdana', cursive;">Thalassemia values</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="x63" placeholder="Enter Thalassemia values" name="x62" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="control-label col-sm-2" for="x64" style="font-family: 'Verdana', cursive;">Target</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="x64" placeholder="Enter Target" name="x63" required>
+          </div>
+        </div>
+
+        <div class="form-group">        
+          <div class="col-sm-offset-2 col-sm-10">
+            <input class="btn btn-primary" type="submit" name="Submit Req">
+          </div>
+        </div>
+        </form>
+        
+      
+    </div>
+
+  </div>  
+
+
+</div>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    
+    <script>
+      var btn = $('#button');
+
+$(window).scroll(function() {
+  if ($(window).scrollTop() > 300) {
+    btn.addClass('show');
+  } else {
+    btn.removeClass('show');
+  }
+});
+
+btn.on('click', function(e) {
+  e.preventDefault();
+  $('html, body').animate({scrollTop:0}, '300');
+});
+
+
+    </script>
+</body>
+</html>
